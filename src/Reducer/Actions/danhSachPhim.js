@@ -26,3 +26,18 @@ export const fetchDanhSachPhimDC = () => {
             });
     };
 };
+export const fetchThongTinPhim = (id) => {
+    return dispatch => {
+        danhSachPhim
+            .fetchThongTinPhim(id)
+            .then(res => {
+                dispatch(createAction("DETAIL-PHIM", res.data));
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
+};
+
+
+

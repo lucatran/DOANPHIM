@@ -28,7 +28,7 @@ class Product extends Component {
                     <div className="Detail-DC">
                         <Slider {...settings}>
                             {listDanhSachPhimDC.map((phim, index) => {
-                                console.log(phim, index);
+                            
                                 return (
                                     <div key={index}>
                                         <ListPhimDC phim={phim} />
@@ -46,7 +46,7 @@ class Product extends Component {
                     <div className="Detail-SC">
                         <Slider {...settings}>
                             {listDanhSachPhimSC.map((phim, index) => {
-                                console.log(phim, index);
+                              
                                 return (
                                     <div key={index}>
                                         <ListPhimSC phim={phim} />

@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import * as yup from 'yup';
+import { Config } from '../common/Config';
 
 export const registerSchema = yup.object().shape({
     taiKhoan: yup.string().required("Vui lòng không để trống").min(5, 'Tối thiểu 5 ký tự')
@@ -12,18 +13,18 @@ export const registerSchema = yup.object().shape({
     maNhom: yup.string().required("Vui lòng không để trống")
 });
 
-class UserServices{
-    Register(data){
+class UserServices {
+    Register(data) {
         return Axios({
             method: "POST",
-            url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy",
+            url: `${Config.domain}/api/QuanLyNguoiDung/DangKy`,
             data
         });
     };
-    Login(user){
+    Login(user) {
         return Axios({
             method: "POST",
-            url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+            url: `${Config.domain}/api/QuanLyNguoiDung/DangNhap`,
             data: user
         });
     }
